@@ -1,0 +1,65 @@
+@use '../../../styles/globals.scss' as globals;
+
+
+.wrapperCard {
+    min-height: 340px;
+    padding: 10px;
+    width: 220px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: transform 250ms;
+}
+
+.wrapperCard:hover {
+    transform: translateY(-4px);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.imgCart {
+    width: 70%;
+    object-fit: cover;
+}
+
+.titleCard {
+    text-align: center;
+    font: globals.$h5-700-24-RFDewi;
+    font-size: 18px;
+    max-width: 200px;
+    color: globals.$blue-color;
+    opacity: 0.8;
+}
+
+.descriptionText {
+    text-align: center;
+    font-size: 12px;
+    color: globals.$grey-medium;
+}
+
+.price {
+    color: globals.$orange;
+    font: globals.$h5-700-24-RFDewi;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.button {
+    height: 30px;
+    width: 170px;
+    border-radius: 6px;
+    border: 1px solid #ff7b00;
+    color: globals.$orange;
+}
+
+.button:hover {
+    color: globals.$white;
+    background: globals.$orange;
+    transition: bacbackground-color .0,5s ease-out;
+}
+
+.button:active {
+    opacity: 0.6;
+}

@@ -1,0 +1,66 @@
+@use '../../../styles//globals.scss' as globals;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 25px 0 65px;
+    background: globals.$grey-muted;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+    @media (max-width: 480px) {
+        padding: 0 0px 0 25px;
+      }
+}
+
+.myStor {
+    color: globals.$blue-color;
+    text-decoration: none;
+    font: globals.$h5-700-24-RFDewi;
+    font-size: 22px;
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+      }
+}
+
+.myStor:hover {
+    color: globals.$blue-color;
+    opacity: 0.5;
+}
+
+.myStor:active {
+    opacity: 1;
+}
+
+.wrapperCart {
+    display: flex;
+    width: 100px;
+    align-items: flex-start;
+}
+
+.cartImg {
+    width: 60px;
+    height: 60px;
+
+    @media (max-width: 480px) {
+        width: 48px;
+        height: 48px;
+      }
+}
+
+.cartImg:hover {
+    opacity: 0.5;
+}
+
+.cartCount {
+    font-size: 40px;
+    font: globals.$h5-700-24-RFDewi;
+    font-weight: 800;
+    color: globals.$orange;
+}
+
+@media (max-width: 1600px) {
+
+}
