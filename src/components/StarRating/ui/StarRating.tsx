@@ -7,7 +7,6 @@ export const StarRating = () => {
     return savedRating ? parseInt(savedRating) : 0;
   });
 
-  // Сохраняем рейтинг в localStorage при изменении
   useEffect(() => {
     localStorage.setItem("starRating", rating.toString());
   }, [rating]);

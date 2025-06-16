@@ -1,4 +1,3 @@
-
 import {useEffect, useState} from "react";
 import style from "./ImageSlider.module.scss"
 import {useDispatch, useSelector} from "react-redux";
@@ -26,8 +25,7 @@ const ImageSlider = () => {
         return <p>Error: {error}</p>;
     }
     const images = banners.map(item => item.url).filter(url => url !== undefined);
-
-    console.log(images);
+    
     const goToPrev = () => {
         setCurrentIndex(prev =>
             prev === 0 ? images.length - 1 : prev - 1
@@ -56,7 +54,6 @@ const ImageSlider = () => {
                     </div>
                 ))}
             </div>
-
             <button className={`${style.carouselButton} ${style.next}`} onClick={goToNext}>
                 &gt;
             </button>

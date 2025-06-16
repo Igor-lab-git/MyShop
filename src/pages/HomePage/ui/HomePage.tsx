@@ -35,11 +35,9 @@ export const HomePage = () => {
   if (error) {
     return <p>Error: {error}</p>;
   }
-  console.log(products);
   
 
 const brands = ["Все", ...new Set(products.map(p => p.brand))]
-  console.log(brands);
   
   const handleBrandClick = (brand: string) => {
     setSelectedBrand(brand);
@@ -48,8 +46,7 @@ const brands = ["Все", ...new Set(products.map(p => p.brand))]
   const filteredProducts = products.filter((product) => {
     const matchesBrand = selectedBrand === 'Все' || product.brand === selectedBrand;
     const matchesName = product.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDescription = product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesBrand && matchesName && matchesDescription
+    return matchesBrand && matchesName;
   });
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);

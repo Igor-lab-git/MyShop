@@ -12,6 +12,7 @@ interface Props {
 export const CartItemComponent: React.FC<Props> = ({ item }) => {
 
   const dispatch = useDispatch();
+   const image = item.product.imageUrl.slice(0, 200).toString();
 
   const productIncrease = () => {
     dispatch(
@@ -32,15 +33,17 @@ export const CartItemComponent: React.FC<Props> = ({ item }) => {
     }
   };
 
+  
   const remove = () => {
     dispatch(removeItem(item.product.id));
   };
-
+  
+ 
   return (
     <li className={style.listWrapper} key={item.product.id}>
       <img
         className={style.imgCart}
-        src={item.product.imageUrl}
+        src={image}
         alt={item.product.title}
       />
       <div className={style.contentWrapper}>

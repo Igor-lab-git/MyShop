@@ -1,3 +1,5 @@
+@use "../../../styles/globals.scss" as globals;
+
 .carousel {
   position: relative;
   max-width: 79%;
@@ -48,7 +50,7 @@
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: globals.$grey-element;
   border: none;
   border-radius: 50%;
   font-size: 20px;
@@ -57,19 +59,13 @@
 }
 
 .carouselButton:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: globals.$grey-element;
 }
 
-// .carousel-button.prev {
-//   left: 15px;
-// }
 .prev {
   left: 15px;
 }
 
-// .carousel-button.next {
-//   right: 15px;
-// }
 .next {
   right: 15px;
 }

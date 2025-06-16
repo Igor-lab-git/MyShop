@@ -25,7 +25,7 @@ export const NewComment = (): React.JSX.Element => {
     if (!username.trim() || !text.trim()) return;
     setComments([
       ...comments,
-      { id: Date.now(), username: username.trim(), text: text.trim() },
+      { id: Date.now(), username: username, text: text },
     ]);
     setUsername("");
     setText("");

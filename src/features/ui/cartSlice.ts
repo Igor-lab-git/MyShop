@@ -6,7 +6,7 @@ interface CartState {
 }
 
 const initialState: CartState = {
-  items: JSON.parse(localStorage.getItem('cart') || '[]'),
+  items: JSON.parse(window.localStorage.getItem('cart') || '[]'),
 };
 
 
