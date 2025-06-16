@@ -1,11 +1,25 @@
-import { Product } from "../../types";
+import {IBanner, Product} from "../../types";
 
 export  const fetchProducts = async () : Promise<Product[]>  => { 
     try {
-        const data = await fetch("https://mocki.io/v1/87596b30-1efb-4f97-a87c-f5843ef3b6b9");
+        const data = await fetch("https://mpedfb326bd52688a7ae.free.beeceptor.com/products");
+        
         return await data.json();
+        
     } catch (error) {
         console.error("Could not fetch products:", error);
        throw error;
     }
   }
+
+  export const fetchBannerImages = async (): Promise<IBanner[]> => {
+    try {
+        const response = await fetch("https://mpedfb326bd52688a7ae.free.beeceptor.com/banner");
+        return await response.json();
+    } catch (error) {
+        console.error("Could not fetch products:", error);
+        throw error;
+    }
+  }
+
+ 

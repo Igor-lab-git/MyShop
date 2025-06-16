@@ -3,9 +3,35 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  imageUrl: string;
+  inDetail: string;
+  brand: string;
+  imageUrl: string[];
 }
 export interface CartItem {
   product: Product;
   quantity: number;
 }
+
+export interface  IBanner {
+  id: number;
+  url: string;
+  alt: string
+}
+
+export interface FormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export interface FormErrors {
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+}
+
+export type Comment = {
+  id: number;
+  username: string;
+  text: string;
+};

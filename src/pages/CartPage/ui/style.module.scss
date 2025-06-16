@@ -1,125 +1,62 @@
-@use '../../../styles//globals.scss' as globals;
+@use "../../../styles//globals.scss" as globals;
+
+.wrapperShop {
+  max-width: 73%;
+  margin: 30px auto;
+}
+.navigate {
+  display: flex;
+  gap: 10px;
+}
+.navigateBtn {
+  opacity: 0.8;
+}
+.navigateBtn:hover {
+  color: globals.$button-hover;
+  text-decoration: underline;
+}
 
 .cartList {
-    display: flex;
-    margin-top: 70px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    row-gap: 25px;
-
-    @media (max-width: 1000px) {
-        max-width: 515px;
-        column-gap: 10px;
-        flex-direction: row
-    }
-
-    @media (max-width: 850px) {
-        max-width: 355px;
-        column-gap: 10px;
-        flex-direction: row
-    }
-
-    @media (max-width: 630px) {
-        max-width: 195px;
-        column-gap: 10px;
-        flex-direction: row
-    }
-
-    @media (max-width: 400px) {
-        margin: 90px auto;
-    }
+  display: flex;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  row-gap: 25px;
 }
 
 .titleShope {
-    margin: 20px 0 0 40px;
-    font: globals.$h5-700-24-RFDewi;
-    font-size: 25px;
-    color: globals.$grey-light;
-    opacity: 0.8;
-
-    @media (max-width: 400px) {
-        text-align: center;
-    }
+  margin: 20px 0 0 40px;
+  font-size: 25px;
+  color: globals.$grey-light;
+  opacity: 0.8;
 }
 
 .cartIsEmpty {
-    margin: 20px 0 0 40px;
-    font: globals.$h5-700-24-RFDewi;
-    font-size: 25px;
-    color: globals.$orange;
-    opacity: 0.7;
-
-    @media (max-width: 400px) {
-        text-align: center;
-    }
+  margin: 20px 0 0 40px;
+  font-size: 25px;
+  color: globals.$blue-button;
+  opacity: 0.7;
 }
 
 .wrapperCalculate {
-    margin-top: 70px;
-    width: 250px;
-    height: 340px;
-    position: absolute;
-    right: 55px;
-    top: 125px;
-    padding: 25px 30px 0 30px;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
-    @media (max-width: 1000px) {
-        width: 200px;
-    }
-
-    @media (max-width: 630px) {
-        width: 150px;
-        right: 25px;
-    }
-
-    @media (max-width: 400px) {
-        top: 70px;
-        max-height: 50px;
-        width: 150px;
-        padding: 0;
-        right: 110px;
-    }
-
-    @media (max-width: 390px) {
-        right: 100px;
-    }
-
-    @media (max-width: 375px) {
-        right: 95px;
-    }
-
-    @media (max-width: 365px) {
-        right: 90px;
-    }
-
-    @media (max-width: 36px) {
-        right: 85px;
-    }
+  text-align: center;
+  margin: 20px 0 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  @media (max-width: 390px) {
+    margin: 20px 0 0px 0;
+  }
 }
 
 .titleCalculate {
-    font-size: 18px;
-    color: globals.$orange;
-
-    @media (max-width: 400px) {
-        font-size: 13px;
-        padding: 7px 0 5px 0;
-    }
+  font-size: 18px;
+  color: globals.$blue-button;
 }
 
 .calculateCount {
-    display: block;
-    margin-top: 15px;
-    font-size: 40px;
-    font: globals.$h5-700-24-RFDewi;
-    font-weight: 800;
-    color: globals.$orange;
-
-    @media (max-width: 400px) {
-        font-size: 13px;
-        display: inline;
-    }
+  color: globals.$blue-button;
+  font: globals.$mobile-h5-700-48-Disket-Mono-Bold;
 }

@@ -1,0 +1,83 @@
+.carousel {
+  position: relative;
+  max-width: 79%;
+  height: 220px;
+  margin: 15px auto;
+  overflow: hidden;
+  border-radius: 10px;
+   @media (max-width: 1350px) {
+       max-width: 65%;
+       height: 180px;
+    }
+    @media (max-width: 690px) {
+       max-width: 65%;
+       height: 130px;
+    }
+    @media (max-width: 590px) {
+       max-width: 65%;
+       height: 100px;
+    }
+}
+
+.carouselContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carouselSlide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carouselSlide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carouselButton:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+// .carousel-button.prev {
+//   left: 15px;
+// }
+.prev {
+  left: 15px;
+}
+
+// .carousel-button.next {
+//   right: 15px;
+// }
+.next {
+  right: 15px;
+}
+
+@media (max-width: 768px) {
+  .carouselButton {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}

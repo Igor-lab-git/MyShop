@@ -6,8 +6,10 @@ interface CartState {
 }
 
 const initialState: CartState = {
-  items: [],
+  items: JSON.parse(localStorage.getItem('cart') || '[]'),
 };
+
+
 
 const cartSlice = createSlice({
   name: "cart",
@@ -23,11 +25,13 @@ const cartSlice = createSlice({
       } else {
         state.items.push(newItem);
       }
+      localStorage.setItem('cart', JSON.stringify(state.items));
     },
     removeItem: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter(
         (item) => item.product.id !== action.payload
       );
+      localStorage.setItem('cart', JSON.stringify(state.items));
     },
     updateQuantity: (
       state,
@@ -37,8 +41,10 @@ const cartSlice = createSlice({
       const itemIndex = state.items.findIndex(
         (item) => item.product.id === productId
       );
+      localStorage.setItem('cart', JSON.stringify(state.items));
       if (itemIndex !== -1) {
         state.items[itemIndex].quantity = quantity;
+        localStorage.setItem('cart', JSON.stringify(state.items));
       }
     },
     clearCart: (state) => {

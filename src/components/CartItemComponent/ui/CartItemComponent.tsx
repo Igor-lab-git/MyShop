@@ -3,12 +3,14 @@ import { CartItem } from "../../../types/index";
 import { useDispatch } from "react-redux";
 import { updateQuantity, removeItem } from "../../../features/ui/cartSlice";
 import style from "./style.module.scss";
+import deleteCart from "../../../../public/icons/deleteCart.svg"
 
 interface Props {
   item: CartItem;
 }
 
 export const CartItemComponent: React.FC<Props> = ({ item }) => {
+
   const dispatch = useDispatch();
 
   const productIncrease = () => {
@@ -42,8 +44,12 @@ export const CartItemComponent: React.FC<Props> = ({ item }) => {
         alt={item.product.title}
       />
       <div className={style.contentWrapper}>
-        <span className={style.titleCart}>{item.product.title}</span>
-        <p className={style.priceCart}>Цена: ${item.product.price}</p>
+        <p className={style.priceCart}>Цена: {item.product.price} ₽</p>
+        <p className={style.titleCount}>
+          Итого: {item.product.price * item.quantity} ₽
+        </p>
+        
+        <div className={style.wrapperButtonsCuonter}>
         <div className={style.wrapperButton}>
           <button className={style.btnCounter} onClick={productDecrease}>
             -
@@ -53,14 +59,10 @@ export const CartItemComponent: React.FC<Props> = ({ item }) => {
             +
           </button>
         </div>
-      </div>
-      <div className={style.wrapperCount}>
-        <p className={style.titleCount}>
-          Итого: ${item.product.price * item.quantity}
-        </p>
-        <button className={style.buttonRemove} onClick={remove}>
-          Удалить
+        <button  onClick={remove}>
+          <img className={style.buttonRemove} src={deleteCart} alt="deleteCart" />
         </button>
+        </div>
       </div>
     </li>
   );

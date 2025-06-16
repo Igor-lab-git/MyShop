@@ -1,66 +1,130 @@
-@use '../../../styles//globals.scss' as globals;
+@use "../../../styles//globals.scss" as globals;
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 75px;
-    padding: 0 25px 0 65px;
-    background: globals.$grey-muted;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+.contactsHeader {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 100px;
+  gap: 20px;
+  height: 45px;
+  background-color: globals.$black;
+  @media (max-width: 750px) {
+    padding-right: 30px;
+  }
+  @media (max-width: 530px) {
+    font-size: 14px;
+    gap: 15px;
+  }
+}
 
-    @media (max-width: 480px) {
-        padding: 0 0px 0 25px;
-      }
+.contactsHeaderSpan {
+  color: globals.$white;
+  @media (max-width: 530px) {
+    font-size: 14px;
+  }
+}
+
+.socialWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  border-radius: 15px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  padding: 0 25px 0 65px;
+  background: globals.$white-medium-light;
+  border-bottom: 1px solid globals.$grey-medium;
+
+  @media (max-width: 530px) {
+    padding: 0 0px 0 25px;
+  }
+  @media (max-width: 410px) {
+    padding: 0 0px 0 9px;
+  }
 }
 
 .myStor {
-    color: globals.$blue-color;
-    text-decoration: none;
-    font: globals.$h5-700-24-RFDewi;
-    font-size: 22px;
+  display: flex;
+  color: #6563ff;
+  text-decoration: none;
+  font: 700 24px RFDewi-Black, sans-serif;
+  font-size: 22px;
+  align-items: flex-end;
+  gap: 10px;
 
-    @media (max-width: 480px) {
-        font-size: 18px;
-      }
+  @media (max-width: 750px) {
+    font-size: 19px;
+    width: 30px;
+  }
+  @media (max-width: 410px) {
+    font-size: 17px;
+  }
 }
 
 .myStor:hover {
-    color: globals.$blue-color;
-    opacity: 0.5;
+  color: globals.$blue-color;
 }
 
 .myStor:active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .wrapperCart {
-    display: flex;
-    width: 100px;
-    align-items: flex-start;
+  position: relative;
+  display: flex;
+  gap: 50px;
+  width: 225px;
+  height: 50px;
+  border-radius: 61px;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 620px) {
+    gap: 20px;
+    width: 190px;
+  }
+  @media (max-width: 620px) {
+    gap: 8px;
+    width: 185px;
+  }
 }
 
 .cartImg {
-    width: 60px;
-    height: 60px;
+  width: 55px;
+  height: 43px;
 
-    @media (max-width: 480px) {
-        width: 48px;
-        height: 48px;
-      }
+  // @media (max-width: 480px) {
+  //   width: 55px;
+  //   height: 43px;
+  // }
 }
 
 .cartImg:hover {
-    opacity: 0.5;
+  opacity: 0.8;
 }
 
 .cartCount {
-    font-size: 40px;
-    font: globals.$h5-700-24-RFDewi;
-    font-weight: 800;
-    color: globals.$orange;
+  position: absolute;
+  font: globals.$normal-400-20-Roboto-Regular;
+  color: globals.$blue-button;
+  height: 22px;
+  width: 22px;
+  display: flex;
+  justify-content: center;
+  left: 32px;
+  align-items: center;
+  top: 7px;
 }
 
-@media (max-width: 1600px) {
-
+.titleCart {
+  font: 700 24px RFDewi-Black, sans-serif;
 }
+
+// @media (max-width: 1600px) {
+// }
