@@ -7,7 +7,7 @@ import { fetchProductsAsync } from "../../../features/ui/productsSlice";
 import { AppDispatch, RootState } from "../../../features/store";
 import style from "./style.module.scss"
 import { NewComment } from "../../../components/NewComment";
-import { ProductsDetailSlider } from "../../../components/ProductsDetailSlider";
+//import { ProductsDetailSlider } from "../../../components/ProductsDetailSlider";
 
 
 export const ProductDetail = () => {
@@ -51,8 +51,8 @@ export const ProductDetail = () => {
 
       <div className={style.wrapperCardDetail}>
         <div className={style.wrapperImg}>
-          <img className={style.img} src={product?.imageUrl[0]} alt={product?.title} />
-          <ProductsDetailSlider images={product?.imageUrl}/>
+          <img className={style.img} src={product?.imageUrl} alt={product?.title} />
+          {/* <ProductsDetailSlider images={product?.imageUrl}/> */}
         </div>
         <div className={style.wrapperCardContent}>
           <span className={style.title}>{product?.title}</span>

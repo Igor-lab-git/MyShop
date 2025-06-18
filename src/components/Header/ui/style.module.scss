@@ -52,7 +52,7 @@
 
 .myStor {
   display: flex;
-  color: #6563ff;
+  color: globals.$blue-color;
   text-decoration: none;
   font: 700 24px RFDewi-Black, sans-serif;
   font-size: 22px;
@@ -98,11 +98,6 @@
 .cartImg {
   width: 55px;
   height: 43px;
-
-  // @media (max-width: 480px) {
-  //   width: 55px;
-  //   height: 43px;
-  // }
 }
 
 .cartImg:hover {
@@ -125,6 +120,3 @@
 .titleCart {
   font: 700 24px RFDewi-Black, sans-serif;
 }
-
-// @media (max-width: 1600px) {
-// }

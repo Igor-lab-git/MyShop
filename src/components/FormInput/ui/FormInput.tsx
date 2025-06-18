@@ -1,5 +1,4 @@
 import React from 'react';
-// } from '../../../types';
 import style from "./style.module.scss"
 
 interface FormInputProps {

@@ -39,8 +39,7 @@ export const BurgerMenu = () => {
         <Link to="/">Home</Link>
         <Link to="/AboutUs">О нас</Link>
         <Link to="/Contacts">Контакты</Link>
-        <Link to="/Services">Сервис</Link>
-        <Link to="/polytheca">Политика</Link>
+        <Link to="/polytheca">Политика сайта</Link>
       </nav>
     </div>
   );

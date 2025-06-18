@@ -29,13 +29,13 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
-  color: red;
-  fill: red;
+  color: globals.$error;
+  fill: globals.$error;
 }
 
 .heartIcon:hover {
   animation: heartIconbeat 1s infinite;
-  color: red;
+  color: globals.$error;
 }
 
 .wrapperCard {
@@ -43,7 +43,7 @@
   min-height: 350px;
   width: 220px;
   border-radius: 3px;
-  background-color: #fcfafa;
+  background-color: globals.$wrapper-card;
   display: flex;
   flex-direction: column;
   align-items: center;

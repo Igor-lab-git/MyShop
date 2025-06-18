@@ -43,12 +43,29 @@
   text-align: center;
   margin: 20px 0 20px 0;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
   gap: 10px;
+  flex-direction: column;
   @media (max-width: 390px) {
     margin: 20px 0 0px 0;
   }
+}
+.wrappreTitleCount {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.btnClearCartPage {
+  border: 2px solid globals.$black;
+  border-radius: 4px;
+  padding: 6px;
+  align-items: center;
+  font: globals.$h4-300-32-Roboto-Light;
+}
+.btnClearCartPage:hover {
+  border-color: globals.$button-hover;
+  color: globals.$button-hover;
+  transition: color 0.5s ease;
 }
 
 .titleCalculate {

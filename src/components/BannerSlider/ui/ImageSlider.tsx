@@ -13,7 +13,6 @@ const ImageSlider = () => {
     const {banners, loading, error} = useSelector(
         (state: RootState) => state.banners
     )
-    console.log(banners)
     useEffect(() => {
         dispatch(fetchBannerImagesAsync() as ReturnType<typeof fetchBannerImagesAsync>);
     }, [dispatch]);

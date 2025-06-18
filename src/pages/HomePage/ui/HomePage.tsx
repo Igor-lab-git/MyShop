@@ -48,6 +48,8 @@ const brands = ["Все", ...new Set(products.map(p => p.brand))]
     const matchesName = product.title.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesBrand && matchesName;
   });
+  console.log(products);
+  
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
 
