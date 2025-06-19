@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   inDetail: string;
   brand: string;
-  imageUrl: string;
+  imageUrl: string[];
 }
 export interface CartItem {
   product: Product;

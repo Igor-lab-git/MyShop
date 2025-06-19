@@ -33,7 +33,7 @@ export const ProductCard: FC<Props> = ({ product }: Props) => {
       <div className={style.wrapperDescription}>
        
         <Link className={style.titleCard} to={`/product/${product.id}`}>
-         <img className={style.imgCart}src={product.imageUrl}alt={product.title}/>{product.title}
+         <img className={style.imgCart}src={product.imageUrl[0]}alt={product.title}/>{product.title}
          </Link>
 
         <p className={style.descriptionText}>{product.description}</p>

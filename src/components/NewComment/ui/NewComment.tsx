@@ -3,9 +3,13 @@ import style from "./style.module.scss";
 import { StarRating } from "../../StarRating";
 import { Comment } from "../../../types";
 
-const COMMENTS_KEY = "comments";
+// const COMMENTS_KEY = "comments";
+interface NewCommentProps {
+  productId?: string | number;
+}
 
-export const NewComment = (): React.JSX.Element => {
+export const NewComment = ( { productId }: NewCommentProps): React.JSX.Element => {
+  const COMMENTS_KEY = `comments_${productId}`;
   // Инициализация состояния из localStorage
   const [comments, setComments] = useState<Comment[]>(() => {
     const data = window.localStorage.getItem(COMMENTS_KEY);
@@ -18,9 +22,9 @@ export const NewComment = (): React.JSX.Element => {
   // Сохраняем комментарии в localStorage при каждом изменении
   useEffect(() => {
     window.localStorage.setItem(COMMENTS_KEY, JSON.stringify(comments));
-  }, [comments]);
+  }, [comments, COMMENTS_KEY]);
 
-  // Добавление комментария
+
   const addComment = () => {
     if (!username.trim() || !text.trim()) return;
     setComments([
@@ -31,7 +35,6 @@ export const NewComment = (): React.JSX.Element => {
     setText("");
   };
 
-  // Удаление комментария по id
   const removeComment = (id: number) => {
     setComments(comments.filter((comment) => comment.id !== id));
   };

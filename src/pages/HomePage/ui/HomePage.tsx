@@ -11,6 +11,7 @@ import homeBanner_2 from "../../../../public/img/homePage/homeBanner_2.png"
 import homeBanner_3 from "../../../../public/img/homePage/homeBanner_3.png"
 import homeBanner_4 from "../../../../public/img/homePage/homeBanner_4.png"
 import homeBanner_5 from "../../../../public/img/homePage/homeBanner_5.png"
+import { SearchBar } from "../../../components/SearchBarProps/indwx";
 
 const ITEMS_PER_PAGE = 16;
 
@@ -29,13 +30,6 @@ export const HomePage = () => {
     dispatch(fetchProductsAsync() as ReturnType<typeof fetchProductsAsync>);
   }, [dispatch]);
 
-  if (loading) {
-    return <p>Загрузка товаров...</p>;
-  }
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-  
 
 const brands = ["Все", ...new Set(products.map(p => p.brand))]
   
@@ -54,23 +48,22 @@ const brands = ["Все", ...new Set(products.map(p => p.brand))]
   const visibleProducts = filteredProducts.slice(0, visibleCount);
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) =>
-      Math.min(prev + ITEMS_PER_PAGE, filteredProducts.length)
-    );
+    setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, filteredProducts.length));
   };
+
+  if (loading) return <p>Загрузка товаров...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>
         <ImageSlider />
       <div className={style.wrapperHomePage}>
       <div className={style.inputWrapper}>
-        <input className={style.input}
-          type="text"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Поиск по названию..."
+      <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={(e) => setSearchTerm(e.target.value)}
+          onReset={() => setSearchTerm("")}
         />
-        <button className={style.inputButton} onClick={() => setSearchTerm("")}>Отмена</button>
       </div> 
       <div className={style.wrapperBrandFilter}>
       {brands.map((brand) => (
